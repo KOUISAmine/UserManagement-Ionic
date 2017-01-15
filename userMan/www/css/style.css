@@ -1,0 +1,28 @@
+form input.ng-invalid:not(.ng-pristine) {
+    box-shadow: 2px 2px 2px red;
+}
+.error-message {
+    padding: 12px;
+    background-color: rgba(255, 133, 0, 0.1);
+    font-weight: bold;
+}
+
+.ionic-logo {
+    display: block;
+    margin: 15px auto;
+    width: 96px;
+    height: 96px;
+}
+
+.details {
+    padding: 0px 12px 20px 12px;
+}
+
+.details img {
+    float: left;
+    margin-right: 12px;
+}
+
+.list {
+    clear: both;
+}

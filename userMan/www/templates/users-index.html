@@ -1,0 +1,29 @@
+<ion-view view-title="Utilisateurs" cache-view="false">
+	<ion-nav-buttons side="right">
+		<button class="button icon-left ion-log-out button-assertive" ng-click="logout()"> Déconnexion</button>
+	</ion-nav-buttons>
+	<ion-content>
+		<div class="padding">
+			<button class="button button-block ion-person-add button-balanced" ng-click="add()"> Ajouter</button>
+		</div>
+		<ion-refresher pulling-text="Pull to refresh"
+					   refreshing-text="Loading..."
+					   refreshing-icon="ion-loading-c"
+					   pulling-icon="ion-ios7-arrow-thin-down"
+					   on-refresh="doRefresh()">
+		</ion-refresher>
+		<ion-list>
+			<ion-item href="#/users/{{user.uid}}" ng-repeat="user in users" class="item-icon-right item-remove-animate">
+				<h3>{{user.name}}</h3>
+				<p>{{user.address}}</p>
+				<i class="icon ion-chevron-right"></i>
+				<ion-option-button class="button-positive icon-left ion-edit" ui-sref="edit({userId: {{user.uid}}})">
+					Modifier
+				</ion-option-button>
+				<ion-option-button class="button-assertive icon-left ion-ios-trash" ng-click="delete(user.uid)">
+					Supprimer
+				</ion-option-button>
+			</ion-item>
+		</ion-list>
+	</ion-content>
+</ion-view>

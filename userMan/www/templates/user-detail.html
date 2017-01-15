@@ -1,0 +1,19 @@
+<ion-view view-title="{{user.name}}">
+    <ion-nav-buttons side="right">
+        <button class="button icon-left ion-log-out button-assertive" ng-click="logout()"> Déconnexion</button>
+    </ion-nav-buttons>
+    <ion-content class="padding">
+        <!--div class="details">
+            <img src="pics/{{user.pic }}" width="100" height="100"/>
+            <h4>{{ user.name }}</h4>
+        </div-->
+
+        <div class="list card">
+            <span class="item item-icon-left"><i class="icon ion-ios-person"></i>Name<p>{{user.name}}</p></span>
+            <span class="item item-icon-left"><i class="icon ion-android-lock"></i>Password<p>{{user.pass}}</p></span>
+            <span class="item item-icon-left"><i class="icon ion-ios-telephone"></i>CellPhone<p>{{user.phone}}</p></span>
+            <span class="item item-icon-left"><i class="icon ion-email"></i>Email<p>{{user.email}}</p></span>
+            <span class="item item-icon-left"><i class="icon ion-chatbox-working"></i>Adresse<p>{{user.address}}</p></span>
+        </div>
+    </ion-content>
+</ion-view>

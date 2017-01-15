@@ -1,0 +1,31 @@
+<ion-view view-title="Modifier">
+    <ion-nav-buttons side="right">
+        <button class="button icon-left ion-log-out button-assertive" ng-click="logout()"> Déconnexion</button>
+    </ion-nav-buttons>
+    <ion-content>
+        <div class="card">
+            <ion-input class="item item-input">
+                <input type="text" placeholder="Name" ng-model="user.name">
+            </ion-input>
+            <ion-input class="item item-input">
+                <input type="email" placeholder="Email" ng-model="user.email">
+            </ion-input>
+            <ion-input class="item item-input">
+                <input type="password" placeholder="Password" ng-model="user.pass">
+            </ion-input>
+            <ion-input class="item item-input">
+                <input type="text" placeholder="CellPhone" ng-model="user.phone">
+            </ion-input>
+            <ion-input class="item item-input">
+                <textarea rows="3" placeholder="Adresse" ng-model="user.address"></textarea>
+            </ion-input>
+        </div>
+        <div class="padding">
+            <div class="button-bar">
+                <button class="button button-outline button-assertive" ng-click="delete()" ng-if="user.uid">Supprimer</button>
+                <button class="button button-positive" ng-click="save(user)">Enregistrer</button>
+            </div>
+            <p>{{msgtxt}}</p>
+        </div>
+    </ion-content>
+</ion-view>

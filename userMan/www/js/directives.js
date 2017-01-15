@@ -1,0 +1,4 @@
+app.directive('blankDirective', [function(){
+
+}]);
+

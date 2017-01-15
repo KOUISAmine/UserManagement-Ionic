@@ -1,0 +1,51 @@
+<ion-view title="Créer un compte" id="page3">
+    <ion-content padding="true" class="has-header">
+        <form class="list" name="form2" novalidate>
+            <p>Bienvenue : <span>{{user.useremail}}</span></p>
+            <ion-list>
+                <label class="item item-input">
+                    <span class="input-label">Name</span>
+                    <input type="text" name="name" placeholder="" ng-model="user.username" ng-model-options="{ updateOn: 'blur' }" required>
+                </label>
+                <div class="error-message"
+                     ng-show="form2.name.$invalid && !form2.name.$pristine">
+                    Champ obligatoire
+                </div>
+                <label class="item item-input">
+                    <span class="input-label">Username</span>
+                    <input type="email" name="useremail" placeholder="" ng-model="user.useremail" ng-model-options="{ debounce: 1100 }" pattern=".{6,}" required>
+                </label>
+                <div class="error-message"
+                     ng-show="form2.useremail.$invalid && !form2.useremail.$pristine">
+                    Le nom d'utilisateur doit être une adresse e-mail.
+                </div>
+                <label class="item item-input">
+                    <span class="input-label">Password</span>
+                    <input type="password" name="userpassword" placeholder="" ng-model="user.userpassword" ng-model-options="{ debounce: 500 }" pattern=".{6,}" required>
+                </label>
+                <div class="error-message"
+                     ng-show="form2.userpassword.$invalid && !form2.userpassword.$pristine">
+                    Les mots de passe doivent avoir au moins 5 caractères.
+                </div>
+                <label class="item item-input">
+                    <span class="input-label">Phone</span>
+                    <input type="number" name="phone" placeholder="" ng-model="user.phone" ng-model-options="{ debounce: 500 }" required>
+                </label>
+                <div class="error-message"
+                     ng-show="form2.phone.$invalid && !form2.phone.$pristine">
+                    Champ obligatoire
+                </div>
+                <label class="item item-input">
+                    <span class="input-label">Address</span>
+                    <input type="text" name="adresse" placeholder="" ng-model="user.address" ng-model-options="{ debounce: 1000 }" required>
+                </label>
+                <div class="error-message"
+                     ng-show="form2.adresse.$invalid && !form2.adresse.$pristine">
+                    Champ obligatoire
+                </div>
+            </ion-list>
+            <a ng-click="addUser(user)" id="register-button3" class="button button-positive button-block" ng-disabled="form2.$invalid">Inscrivez-vous</a>
+            <!--p>{{msgtxt}}</p-->
+        </form>
+    </ion-content>
+</ion-view>

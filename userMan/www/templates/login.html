@@ -1,0 +1,29 @@
+<ion-view title="Connexion" id="page2">
+    <ion-content padding="true" class="has-header">
+        <form class="list" name="form1" novalidate>
+            <p>Bienvenue : <span>{{user.mail}}</span></p>
+            <ion-list>
+                <label class="item item-input">
+                    <span class="input-label">Username</span>
+                    <input type="email" name="username" placeholder="" ng-model="user.mail" ng-model-options="{ debounce: 1100 }" required pattern=".{6,}">
+                </label>
+                <div class="error-message"
+                     ng-show="form1.username.$invalid && !form1.username.$pristine">
+                    Le nom d'utilisateur doit être une adresse e-mail.
+                </div>
+                <label class="item item-input">
+                    <span class="input-label">Password</span>
+                    <input type="password" name="password" placeholder="" ng-model="user.pass" ng-model-options="{ debounce: 400 }" pattern=".{5,}" required>
+                </label>
+                <div class="error-message"
+                     ng-show="form1.password.$invalid && !form1.password.$pristine">
+                    Les mots de passe doivent avoir au moins 5 caractères.
+                </div>
+            </ion-list>
+            <!--div class="spacer" style="height: 40px;"></div-->
+            <a ng-click="login(user)" id="login-button1" class="button button-balanced button-block" ng-disabled="form1.$invalid">Connectez-vous</a>
+            <!--p>{{msgtxt}}</p-->
+            <a ui-sref="register" id="login-button2" class="button button-positive  button-block">Créer un compte</a>
+        </form>
+    </ion-content>
+</ion-view>
